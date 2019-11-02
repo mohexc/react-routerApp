@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from 'react-router-dom'
 
 class Products extends Component {
   state = {
@@ -14,11 +15,11 @@ class Products extends Component {
       <div>
         <h1>Products</h1>
         <ul>
-          {this.state.products.map(product => (
-            <li key={product.id}>
-              <a href={`/products/${product.id}`}>{product.name}</a>
+          { this.state.products.map(product => (
+            <li key={ product.id }>
+              <Link to={ `/products/${product.id}` }>{ product.name }</Link>
             </li>
-          ))}
+          )) }
         </ul>
       </div>
     );
